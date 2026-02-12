@@ -1,0 +1,6 @@
+
+{
+  "name": "FreshCart AI - Premium Grocery Experience",
+  "description": "A high-end, animated grocery shopping platform featuring AI-powered recipe suggestions, smart cart management, and fluid UI interactions.",
+  "requestFramePermissions": ["camera", "microphone"]
+}

@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abhyuday Food H3+ | Vibrant Organic Life</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@200;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --jungle: #06230C;
+        --emerald: #10B981;
+        --lime: #84CC16;
+        --mint: #F7FEE7;
+        --leaf: #22C55E;
+      }
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: var(--mint);
+        color: var(--jungle);
+        overflow-x: hidden;
+      }
+      
+      /* Smooth Green Scrollbar */
+      ::-webkit-scrollbar { width: 5px; }
+      ::-webkit-scrollbar-track { background: var(--mint); }
+      ::-webkit-scrollbar-thumb { background: var(--emerald); border-radius: 10px; }
+
+      /* Liquid Float Animation */
+      @keyframes liquidFloat {
+        0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+        33% { transform: translateY(-20px) rotate(2deg) scale(1.02); }
+        66% { transform: translateY(-10px) rotate(-1deg) scale(0.98); }
+      }
+      .animate-liquid { animation: liquidFloat 10s ease-in-out infinite; }
+      
+      /* Organic Pulse for Blobs */
+      @keyframes pulseBlob {
+        0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: scale(1); }
+        50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; transform: scale(1.05); }
+      }
+      .animate-blob { animation: pulseBlob 8s ease-in-out infinite; }
+
+      /* Draw Line Animation for Headings */
+      .draw-line {
+        position: relative;
+        display: inline-block;
+      }
+      .draw-line::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 4px;
+        background: var(--lime);
+        transition: width 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        border-radius: 2px;
+      }
+      .draw-line.active::after { width: 100%; }
+
+      /* Section Entrances */
+      .section-reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .section-reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Hover States */
+      .card-glow:hover {
+        box-shadow: 0 30px 60px -12px rgba(16, 185, 129, 0.2);
+        border-color: var(--emerald);
+      }
+
+      .btn-hover-expand {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+      .btn-hover-expand::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: var(--lime);
+        z-index: -1;
+        transition: width 0.4s ease;
+      }
+      .btn-hover-expand:hover::before { width: 100%; }
+
+      @keyframes slide-infinite {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+      }
+      .animate-infinite-scroll {
+        animation: slide-infinite 40s linear infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
