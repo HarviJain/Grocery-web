@@ -1681,13 +1681,26 @@ export default function App() {
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
               className={`flex flex-col items-center gap-4 min-w-[140px] p-8 rounded-[48px] transition-all duration-700 ${
-                selectedCategory === cat.id 
-                ? 'bg-emerald-600 text-white shadow-2xl scale-110' 
-                : 'bg-white text-emerald-400 hover:bg-emerald-50'
+                selectedCategory === cat.id
+                  ? 'bg-emerald-600 text-white shadow-2xl scale-110'
+                  : 'bg-white text-emerald-400 hover:bg-emerald-50'
               }`}
             >
-              <span className="text-5xl animate-bounce">{cat.icon}</span>
-              <span className="text-[11px] font-black uppercase tracking-widest text-center">{cat.name}</span>
+
+              {cat.image ? (
+                <img
+                  src={cat.image}
+                  alt={cat.name}
+                  className="w-14 h-14 object-contain animate-bounce"
+                />
+              ) : (
+                <span className="text-5xl animate-bounce">{cat.icon}</span>
+              )}
+
+              <span className="text-[11px] font-black uppercase tracking-widest text-center">
+                {cat.name}
+              </span>
+
             </button>
           ))}
         </div>

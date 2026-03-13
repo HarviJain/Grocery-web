@@ -200,22 +200,12 @@
 
 
 
-
 import { Product, Category } from '../types';
 
-// Declare module for image imports (add this at the top)
-declare module '*.jpg' {
-  const value: string;
-  export default value;
-}
-declare module '*.jpeg' {
-  const value: string;
-  export default value;
-}
-declare module '*.png' {
-  const value: string;
-  export default value;
-}
+
+// Import category icons
+import gheeIcon from './categories_icon/ghee.png';
+import sugarIcon from './categories_icon/sugar.png';
 
 // Import all images from the products folder
 import quinoaKhichdi from './products/Quinoa Khichdi_Front.jpg';
@@ -237,10 +227,21 @@ import mungDal from './products/Mung Dal_1kg_Front.jpg';
 export const CATEGORIES: Category[] = [
   { id: 'all', name: 'All Products', icon: '🛒' },
   { id: 'khichdi', name: 'Khichdi & Biryani', icon: '🍲' },
-  { id: 'oils', name: 'Pure Oils & Ghee', icon: '🍯' },
+
+  {
+    id: 'ghee_oil',
+    name: 'Oil & Ghee',
+    image: gheeIcon
+  },
+
   { id: 'flours', name: 'Healthy Flours', icon: '🌾' },
   { id: 'pulses', name: 'Dals & Pulses', icon: '🍛' },
-  { id: 'sweeteners', name: 'Natural Sweeteners', icon: '🍬' },
+
+  {
+    id: 'sweeteners',
+    name: 'Natural Sweetners',
+    image: sugarIcon
+  }
 ];
 
 export const PRODUCTS: Product[] = [
@@ -268,7 +269,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'o1',
     name: 'Pure Sunflower Oil',
-    category: 'oils',
+    category: 'ghee_oil',
     price: 368,
     unit: '1L',
     image: ghee500ml,
@@ -278,7 +279,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'o2',
     name: 'Wood-Pressed Groundnut Oil',
-    category: 'oils',
+    category: 'ghee_oil',
     price: 596,
     unit: '1L',
     image: ghee500ml,
@@ -399,7 +400,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'o3',
     name: 'Desi A2 Cow Ghee',
-    category: 'oils',
+    category: 'ghee_oil',
     price: 1470,
     unit: '500ml',
     image: gheeRightside,
